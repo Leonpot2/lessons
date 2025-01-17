@@ -26,11 +26,13 @@ public class Main {
         //выведем результат
         String h = "";
         String m = "";
+
         if (hours < 10) {
             h = "0" + hours;
         } else {
             h = "" + hours;
         }
+
         if (mins < 10) {
             m = "0" + mins;
         } else {
