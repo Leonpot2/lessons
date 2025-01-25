@@ -13,10 +13,11 @@ public class Main {
 
         int k = scanner.nextInt();
 
-        if ((n * m) / 2 == k) {
+        if (k % n ==0) {
             System.out.println("Yes");
-
-        } else {
+        } else if (k % m==0)
+            System.out.println("Yes");
+        else {
             System.out.println("No");
         }
     }
