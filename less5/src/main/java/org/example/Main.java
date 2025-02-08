@@ -127,8 +127,8 @@ public class Main {
 
         } else {
                 System.out.println("Выбрано некорректное число уровня");
-            }
         }
     }
 }
+
 
