@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,7 +10,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Добро пожаловать в игру!\nУ тебя будет 4 попытки для того, чтобы угадать число в промежутке.\nВыбери уровень сложности:\n1.Простой от 5 до 10\n2.Средний от 10 до 50\n3.Сложный от 50 до 150 " + "\nНапиши то число уровня какое выбираешь: ");
+        System.out.println("Добро пожаловать в игру!\nУ тебя будет 4 попытки для того, чтобы угадать число в промежутке.\nВыбери уровень сложности:\n1.Простой от 5 до 10\n2.Средний от 10 до 50\n3.Сложный от 50 до 150 " +
+                "\nНапиши то число уровня какое выбираешь: ");
 
         int level = scanner.nextInt();
 
@@ -50,6 +52,8 @@ public class Main {
 
             if (!(play_again == 1)) {
                 return;
+            } else {
+                main(new String[0]);
             }
         } else if (level == 2) {
             System.out.println("Ты выбрал средний уровень от 10 до 50");
@@ -85,6 +89,8 @@ public class Main {
 
             if (!(play_again == 1)) {
                 return;
+            } else {
+                main(new String[0]);
             }
         } else if (level == 3) {
             System.out.println("Ты выбрал сложный уровень от 50 до 150");
@@ -122,11 +128,21 @@ public class Main {
             if (!(play_again == 1)) {
                 return;
             }  else {
-
+                main(new String[0]);
             }
 
         } else {
-                System.out.println("Выбрано некорректное число уровня");
+            System.out.println("Выбрано некорректное число уровня");
+
+            System.out.println("Хочешь сыграть ещё раз?\n1.Да\n2.Нет");
+
+            int play_again = scanner.nextInt();
+
+            if (!(play_again == 1)) {
+                return;
+            }  else {
+                main(new String[0]);
+            }
         }
     }
 }
