@@ -2,9 +2,8 @@ package src.main.java.org.example;
 
 import java.util.Random;
 import java.util.Scanner;
-import java.util.Scanner;
 
-public class Main3 {
+public class Middle1 {
     static Scanner scanner = new Scanner(System.in);
     static Random random = new Random();
 

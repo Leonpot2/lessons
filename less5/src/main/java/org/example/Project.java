@@ -3,7 +3,7 @@ package org.example;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Lesson5 {
+public class Project {
     static Scanner scanner = new Scanner(System.in);
     static Random random = new Random();
 
