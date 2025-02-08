@@ -8,12 +8,14 @@ public class Main3 {
         int n = scanner.nextInt();
 
         int res = 1;
+        System.out.println();
+        int sum = 0;
 
         for (int i = 2; i <= n ; i++ ) {
-
-            res = res * i;
+            res = res + i;
+            sum += res;
         }
 
-        System.out.println("n!=" + res);
+        System.out.println("sum=" + sum);
     }
 }

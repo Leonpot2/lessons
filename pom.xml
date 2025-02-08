@@ -12,6 +12,10 @@
         <module>less1</module>
         <module>less2</module>
         <module>less3</module>
+        <module>less4</module>
+        <module>less4.1</module>
+        <module>less4.2</module>
+        <module>less5</module>
     </modules>
 
     <properties>

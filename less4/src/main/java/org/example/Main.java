@@ -1,4 +1,4 @@
-package org.example;
+package src.main.java.org.example;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class Main {
         int day = 1;
         while (x <= y) {
             x += (x * 1.1);
-            day= day + 1;
+            day++;
         }
         System.out.println("days = " + day);
 
