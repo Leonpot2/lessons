@@ -1,10 +1,9 @@
 package org.example;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class Lesson5 {
     static Scanner scanner = new Scanner(System.in);
     static Random random = new Random();
 
