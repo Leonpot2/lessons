@@ -12,17 +12,17 @@ public class Task1 {
         int count = scanner.nextInt();
 
         List<Integer> result = new ArrayList<>();
-        int max = Integer.MIN_VALUE;
-        int Max = 0;
+        int max = 0;
+        int maxCount = 0;
         for (int i = 0; i < count; i++) {
-            int n = random.nextInt(101);
+            int n = random.nextInt(100) + 1;
             result.add(n);
 
             if (n > max) {
                 max = n;
-                Max = 1;
+                maxCount = 1;
             }   else if (n == max) {
-                Max++;
+                maxCount++;
             }
 
         }
@@ -30,7 +30,7 @@ public class Task1 {
 
         System.out.println(result);
         System.out.println("Максимальное число: " + max);
-        System.out.println("Количество максимальных чисел: " + Max);
+        System.out.println("Количество максимальных чисел: " + maxCount);
     }
 }
 
