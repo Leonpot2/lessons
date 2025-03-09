@@ -12,18 +12,29 @@ public class Task1 {
         int count = scanner.nextInt();
 
         List<Integer> result = new ArrayList<>();
+        int max = Integer.MIN_VALUE;
+        int Max = 0;
         for (int i = 0; i < count; i++) {
-            int n = random.nextInt(1001);
+            int n = random.nextInt(101);
             result.add(n);
+
+            if (n > max) {
+                max = n;
+                Max = 1;
+            }   else if (n == max) {
+                Max++;
+            }
+
         }
         result.add(0);
 
         System.out.println(result);
-        int n;
-        int max = Math.max(n);
-        System.out.println("Наибольшее число: " + n);
+        System.out.println("Максимальное число: " + max);
+        System.out.println("Количество максимальных чисел: " + Max);
     }
 }
+
+
 
 
 
