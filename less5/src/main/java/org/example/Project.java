@@ -4,146 +4,148 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Project {
-    static Scanner scanner = new Scanner(System.in);
-    static Random random = new Random();
+      static Scanner scanner = new Scanner(System.in);
+      static Random random = new Random();
 
     public static void main(String[] args) {
+            System.out.println("Добро пожаловать в игру!\nУ тебя будет 4 попытки для того, чтобы угадать число в промежутке.\nВыбери уровень сложности:\n1.Простой от 5 до 10\n2.Средний от 10 до 50\n3.Сложный от 50 до 150 " +
+                    "\nНапиши то число уровня какое выбираешь: ");
 
-        System.out.println("Добро пожаловать в игру!\nУ тебя будет 4 попытки для того, чтобы угадать число в промежутке.\nВыбери уровень сложности:\n1.Простой от 5 до 10\n2.Средний от 10 до 50\n3.Сложный от 50 до 150 " +
-                "\nНапиши то число уровня какое выбираешь: ");
+            int level = scanner.nextInt();
 
-        int level = scanner.nextInt();
+            if (level == 1) {
 
-        if (level == 1) {
+                int correct_number = random.nextInt(5, 11);
 
-            int correct_number = random.nextInt(5, 11);
+                System.out.println("Ты выбрал простой уровень от 5 до 10");
 
-            System.out.println("Ты выбрал простой уровень от 5 до 10");
+                boolean user_won = false;
 
-            boolean user_won = false;
+                for (int i = 0; i < 4; i++) {
 
-            for (int i = 0; i < 4; i++) {
+                    int answer = scanner.nextInt();
 
-                int answer = scanner.nextInt();
+                    if (answer == correct_number) {
+                        System.out.println("Правильно! Ты выиграл. Количество оставшихся попыток: " + (4 - i - 1));
 
-                if (answer == correct_number) {
-                    System.out.println("Правильно! Ты выиграл. Количество оставшихся попыток: " + (4 - i - 1));
-
-                    user_won = true;
-                    break;
-
-                } else {
-                    System.out.println("Неправильно, попробуй ещё раз. Количество оставшихся порпыток: " + (4 - i - 1));
-                    if (answer > correct_number) {
-                        System.out.println("Загаданное число меньше");
+                        user_won = true;
+                        break;
 
                     } else {
-                        System.out.println("Загаданное число больше");
+                        System.out.println("Неправильно, попробуй ещё раз. Количество оставшихся порпыток: " + (4 - i - 1));
+                        if (answer > correct_number) {
+                            System.out.println("Загаданное число меньше");
+
+                        } else {
+                            System.out.println("Загаданное число больше");
+                        }
                     }
                 }
-            }
-            if (!user_won) {
-                System.out.println("К сожалению, ты проиграл. Загаданное число: " + correct_number);
-            }
-            System.out.println("Хочешь сыграть ещё раз?\n1.Да\n2.Нет");
+                if (!user_won) {
+                    System.out.println("К сожалению, ты проиграл. Загаданное число: " + correct_number);
+                }
+                System.out.println("Хочешь сыграть ещё раз?\n1.Да\n2.Нет");
 
-            int play_again = scanner.nextInt();
+                int play_again = scanner.nextInt();
 
-            if (!(play_again == 1)) {
-                return;
+                if (!(play_again == 1)) {
+                    return;
+                } else {
+                    main(new String[0]);
+                }
+            } else if (level == 2) {
+                System.out.println("Ты выбрал средний уровень от 10 до 50");
+
+                int correct_number = random.nextInt(10, 51);
+                boolean user_won = false;
+
+                for (int i = 0; i < 4; i++) {
+
+                    int answer = scanner.nextInt();
+
+                    if (answer == correct_number) {
+                        System.out.println("Правильно! Ты выиграл. Количество оставшихся попыток: " + (4 - i - 1));
+
+                        user_won = true;
+                        break;
+                    } else {
+                        System.out.println("Неправильно, попробуй ещё раз. Количество оставшихся порпыток: " + (4 - i - 1));
+
+                        if (answer > correct_number) {
+                            System.out.println("Загаданное число меньше");
+                        } else {
+                            System.out.println("Загаданное число больше");
+                        }
+                    }
+                }
+                if (!user_won) {
+                    System.out.println("К сожалению, ты проиграл. Загаданное число: " + correct_number);
+                }
+                System.out.println("Хочешь сыграть ещё раз?\n1.Да\n2.Нет");
+
+                int play_again = scanner.nextInt();
+
+                if (!(play_again == 1)) {
+                    return;
+                } else {
+                    main(new String[0]);
+                }
+            } else if (level == 3) {
+                System.out.println("Ты выбрал сложный уровень от 50 до 150");
+
+                int correct_number = random.nextInt(50, 151);
+                boolean user_won = false;
+
+                for (int i = 0; i < 4; i++) {
+
+                    int answer = scanner.nextInt();
+
+                    if (answer == correct_number) {
+                        System.out.println("Правильно! Ты выиграл. Количество оставшихся попыток: " + (4 - i - 1));
+
+                        user_won = true;
+                        break;
+                    } else {
+                        System.out.println("Неправильно, попробуй ещё раз. Количество оставшихся порпыток: " + (4 - i - 1));
+
+                        if (answer > correct_number) {
+                            System.out.println("Загаданное число меньше");
+
+                        } else {
+                            System.out.println("Загаданное число больше");
+                        }
+                    }
+                }
+                if (!user_won) {
+                    System.out.println("К сожалению, ты проиграл. Загаданное число: " + correct_number);
+                }
+                System.out.println("Хочешь сыграть ещё раз?\n1.Да\n2.Нет");
+
+                int play_again = scanner.nextInt();
+
+                if (!(play_again == 1)) {
+                    return;
+                } else {
+                    main(new String[0]);
+                }
+
             } else {
-                main(new String[0]);
-            }
-        } else if (level == 2) {
-            System.out.println("Ты выбрал средний уровень от 10 до 50");
+                System.out.println("Выбрано некорректное число уровня");
 
-            int correct_number = random.nextInt(10, 51);
-            boolean user_won = false;
+                System.out.println("Хочешь сыграть ещё раз?\n1.Да\n2.Нет");
 
-            for (int i = 0; i < 4; i++) {
+                int play_again = scanner.nextInt();
 
-                int answer = scanner.nextInt();
-
-                if (answer == correct_number) {
-                    System.out.println("Правильно! Ты выиграл. Количество оставшихся попыток: " + (4 - i - 1));
-
-                    user_won = true;
-                    break;
+                if (!(play_again == 1)) {
+                    return;
                 } else {
-                    System.out.println("Неправильно, попробуй ещё раз. Количество оставшихся порпыток: " + (4 - i - 1));
-
-                    if (answer > correct_number) {
-                        System.out.println("Загаданное число меньше");
-                    } else {
-                        System.out.println("Загаданное число больше");
-                    }
+                    main(new String[0]);
                 }
-            }
-            if (!user_won) {
-                System.out.println("К сожалению, ты проиграл. Загаданное число: " + correct_number);
-            }
-            System.out.println("Хочешь сыграть ещё раз?\n1.Да\n2.Нет");
-
-            int play_again = scanner.nextInt();
-
-            if (!(play_again == 1)) {
-                return;
-            } else {
-                main(new String[0]);
-            }
-        } else if (level == 3) {
-            System.out.println("Ты выбрал сложный уровень от 50 до 150");
-
-            int correct_number = random.nextInt(50, 151);
-            boolean user_won = false;
-
-            for (int i = 0; i < 4; i++) {
-
-                int answer = scanner.nextInt();
-
-                if (answer == correct_number) {
-                    System.out.println("Правильно! Ты выиграл. Количество оставшихся попыток: " + (4 - i - 1));
-
-                    user_won = true;
-                    break;
-                } else {
-                    System.out.println("Неправильно, попробуй ещё раз. Количество оставшихся порпыток: " + (4 - i - 1));
-
-                    if (answer > correct_number) {
-                        System.out.println("Загаданное число меньше");
-
-                    } else {
-                        System.out.println("Загаданное число больше");
-                    }
-                }
-            }
-            if (!user_won) {
-                System.out.println("К сожалению, ты проиграл. Загаданное число: " + correct_number);
-            }
-            System.out.println("Хочешь сыграть ещё раз?\n1.Да\n2.Нет");
-
-            int play_again = scanner.nextInt();
-
-            if (!(play_again == 1)) {
-                return;
-            }  else {
-                main(new String[0]);
-            }
-
-        } else {
-            System.out.println("Выбрано некорректное число уровня");
-
-            System.out.println("Хочешь сыграть ещё раз?\n1.Да\n2.Нет");
-
-            int play_again = scanner.nextInt();
-
-            if (!(play_again == 1)) {
-                return;
-            }  else {
-                main(new String[0]);
             }
         }
     }
-}
+
+
+
 
 

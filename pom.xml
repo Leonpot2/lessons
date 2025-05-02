@@ -17,6 +17,10 @@
         <module>less4.2</module>
         <module>less5</module>
         <module>less6</module>
+        <module>less9</module>
+        <module>less11</module>
+        <module>less10</module>
+        <module>less12</module>
     </modules>
 
     <properties>
